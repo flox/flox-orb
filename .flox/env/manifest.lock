@@ -1,0 +1,144 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "circleci-cli": {
+        "pkg-path": "circleci-cli"
+      }
+    },
+    "vars": {},
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {}
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "circleci-cli",
+      "broken": false,
+      "derivation": "/nix/store/lc4ghdhiri3nkvl86sa7pz5qzrf11ivq-circleci-cli-0.1.30995.drv",
+      "description": "Command to enable you to reproduce the CircleCI environment locally and\nrun jobs as if they were running on the hosted CirleCI application.\n",
+      "install_id": "circleci-cli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "name": "circleci-cli-0.1.30995",
+      "pname": "circleci-cli",
+      "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "rev_count": 677397,
+      "rev_date": "2024-09-06T14:57:51Z",
+      "scrape_date": "2024-09-09T13:35:41Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.1.30995",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/xkx7yc0d16n9i3bpa7zzyw1rwzn26xc5-circleci-cli-0.1.30995"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "circleci-cli",
+      "broken": false,
+      "derivation": "/nix/store/jq1fcpywpk1gaqqw7v70hqbm1ljmf9wc-circleci-cli-0.1.30995.drv",
+      "description": "Command to enable you to reproduce the CircleCI environment locally and\nrun jobs as if they were running on the hosted CirleCI application.\n",
+      "install_id": "circleci-cli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "name": "circleci-cli-0.1.30995",
+      "pname": "circleci-cli",
+      "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "rev_count": 677397,
+      "rev_date": "2024-09-06T14:57:51Z",
+      "scrape_date": "2024-09-09T13:35:41Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.1.30995",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2rya0abr60gandphalp51i6wlp69vn6x-circleci-cli-0.1.30995"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "circleci-cli",
+      "broken": false,
+      "derivation": "/nix/store/wnafns02j4azxiyx735h7ccfpdgvrcgz-circleci-cli-0.1.30995.drv",
+      "description": "Command to enable you to reproduce the CircleCI environment locally and\nrun jobs as if they were running on the hosted CirleCI application.\n",
+      "install_id": "circleci-cli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "name": "circleci-cli-0.1.30995",
+      "pname": "circleci-cli",
+      "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "rev_count": 677397,
+      "rev_date": "2024-09-06T14:57:51Z",
+      "scrape_date": "2024-09-09T13:35:41Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.1.30995",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/78x8mi4msa9pr36bh2scw7c9b8v324c1-circleci-cli-0.1.30995"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "circleci-cli",
+      "broken": false,
+      "derivation": "/nix/store/hjkisyc0fq6wl88xzaaxps851nj7xzdx-circleci-cli-0.1.30995.drv",
+      "description": "Command to enable you to reproduce the CircleCI environment locally and\nrun jobs as if they were running on the hosted CirleCI application.\n",
+      "install_id": "circleci-cli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "name": "circleci-cli-0.1.30995",
+      "pname": "circleci-cli",
+      "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+      "rev_count": 677397,
+      "rev_date": "2024-09-06T14:57:51Z",
+      "scrape_date": "2024-09-09T13:35:41Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.1.30995",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/yavy5acb3nm1dfvrjn2dlxc0vah49ila-circleci-cli-0.1.30995"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
