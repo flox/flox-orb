@@ -24,8 +24,8 @@ jobs:
   # Create jobs to test the commands of your orbs.
   # You may want to add additional validation steps to ensure the commands are working as expected.
   remote-environment-test:
-    docker:
-      - image: cimg/base:current
+    machine:
+      image: ubuntu-2204:current
     steps:
       - checkout
       - flox/install
