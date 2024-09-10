@@ -13,6 +13,8 @@ if [ "$ENVIRONMENT" != "" ]; then
   ACTIVATE="$ACTIVATE --remote=$ENVIRONMENT"
 fi
 
-ACTIVATE="$ACTIVATE -- $COMMAND"
+ACTIVATE="$ACTIVATE -- '$COMMAND'"
+
+echo "Running: $ACTIVATE"
 
 eval "$ACTIVATE"

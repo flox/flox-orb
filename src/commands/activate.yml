@@ -16,7 +16,7 @@ parameters:
 
 steps:
   - run:
-      name: "Run command in Flox environment"
+      name: "Run command in a Flox environment"
       command: <<include(scripts/activate.sh)>>
       environment:
         PARAM_COMMAND: <<parameters.command>>
