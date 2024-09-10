@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COMMAND="${PARAM_COMMAND}"
-ENVIRONMENT="${PARAM_ENVIRONMENT}"
+ENVIRONMENT="${PARAM_ENV}"
 
 if [ "$COMMAND" == "" ]; then
   echo "command parameter is required."
