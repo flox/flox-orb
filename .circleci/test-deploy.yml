@@ -26,6 +26,8 @@ jobs:
   remote-environment-test:
     machine:
       image: ubuntu-2204:current
+    environment:
+      FLOX_DISABLE_METRICS: true
     steps:
       - checkout
       - flox/install
