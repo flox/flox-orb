@@ -1,15 +1,23 @@
 description: >
-  This command echos "Hello World" using file inclusion.
-# What will this command do?
-# Descriptions should be short, simple, and clear.
+  Install Flox environment manager.
+
 parameters:
-  to:
+  version:
     type: string
-    default: "World"
-    description: "Hello to whom?"
+    default: ""
+    description: >
+      Select a specific version from a channel.
+  channel:
+    type: string
+    default: stable
+    description: >
+      Release environment (or release channel) from which to install Flox from.
+      One of the following: stable, qa, nightly or specify a commit.
+
 steps:
   - run:
-      environment:
-        PARAM_TO: <<parameters.to>>
-      name: Hello Greeting
+      name: "Install Flox"
       command: <<include(scripts/install.sh)>>
+      environment:
+        PARAM_VERSION: <<parameters.version>>
+        PARAM_CHANNEL: <<parameters.channel>>
