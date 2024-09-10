@@ -15,4 +15,4 @@ fi
 
 ACTIVATE="$ACTIVATE -- $COMMAND"
 
-eval $ACTIVATE
+eval "$ACTIVATE"
