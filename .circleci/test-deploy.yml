@@ -33,9 +33,7 @@ jobs:
       - flox/install
       - flox/activate:
           environment: "flox/nb"
-          command: >
-            python --version
-            which python
+          command: "which python"
 
 workflows:
   test-deploy:
