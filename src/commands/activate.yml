@@ -1,0 +1,23 @@
+description: >
+  Run a command in a Flox environment.
+
+parameters:
+  command:
+    type: string
+    default: ""
+    description: >
+      A command to run inside the Flox environment.
+  environment:
+    type: string
+    default: ""
+    description: >
+      Environment to run the command in. If not specified it will try to find
+      local Flox environment.
+
+steps:
+  - run:
+    name: "Run command in Flox environment"
+    command: <<include(scripts/activate.sh)>>
+    environment:
+      PARAM_COMMAND: <<parameters.command>>
+      PARAM_ENV: <<parameters.environment>>
