@@ -29,9 +29,9 @@ case $OS_FAMILY in
     esac
     ;;
   linux)
-    if command -v dpkg; then
+    if command -v dpkg >/dev/null; then
       INSTALLER_TYPE="deb"
-    elif command -v rpm; then
+    elif command -v rpm >/dev/null; then
       INSTALLER_TYPE="rpm"
     else
       echo "Neither dpkg nor rpm package manager is available."
@@ -53,7 +53,7 @@ case $OS_FAMILY in
 esac
 
 
-echo "Downloading flox..."
+echo "Downloading flox from $DOWNLOAD_URL url ..."
 
 DOWNLOADED_FILE=$(basename "$DOWNLOAD_URL")
 curl --user-agent "install-flox-action" \
