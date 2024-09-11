@@ -41,8 +41,22 @@ commands in those environments.
 
 ## ⭐ Getting Started
 
+An example
 ```yml
-TODO
+version: '2.1'
+
+orbs:
+  flox: flox/flox-orb@1.0.0
+
+workflows:
+  use-flox-orb:
+    machine:
+      image: ubuntu-2204:current
+    jobs:
+      - flox/install                    # <- Install Flox
+      - flox/activate:                  # <- Run a command in a Flox environment
+          command: python --version
+          environment: flox/nb
 ```
 
 ## 📫 Have a question? Want to chat? Ran into a problem?
