@@ -16,7 +16,5 @@ fi
 ACTIVATE="$ACTIVATE -- $COMMAND"
 
 echo "Running: $ACTIVATE"
-echo "ENVIRONMENT: $ENVIRONMENT"
-
 
 eval "$ACTIVATE"
