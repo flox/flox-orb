@@ -1,0 +1,23 @@
+description: >
+  Install Flox environment manager.
+
+parameters:
+  version:
+    type: string
+    default: ""
+    description: >
+      Select a specific version from a channel.
+  channel:
+    type: string
+    default: stable
+    description: >
+      Release environment (or release channel) from which to install Flox from.
+      One of the following: stable, qa, nightly or specify a commit.
+
+steps:
+  - run:
+      name: "Install Flox"
+      command: <<include(scripts/install.sh)>>
+      environment:
+        PARAM_VERSION: <<parameters.version>>
+        PARAM_CHANNEL: <<parameters.channel>>
