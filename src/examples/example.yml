@@ -5,8 +5,10 @@ usage:
   version: 2.1
   orbs:
     flox: flox/orb@1.0.0
-  workflows:
-    use-my-orb:
+  jobs:
+    run-python-notebook:
+      machine:
+        image: ubuntu-2204:current
       jobs:
         - flox/install
         - flox/activate:
