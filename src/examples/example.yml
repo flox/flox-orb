@@ -4,7 +4,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    flox: flox/flox-orb@1.0.0
+    flox: flox/orb@1.0.0
   workflows:
     use-my-orb:
       jobs:
