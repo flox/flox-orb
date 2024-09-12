@@ -9,7 +9,7 @@ usage:
     run-python-notebook:
       machine:
         image: ubuntu-2204:current
-      jobs:
+      steps:
         - flox/install
         - flox/activate:
             environment: "flox/nb"

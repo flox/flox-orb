@@ -52,7 +52,7 @@ jobs:
   use-flox-orb:
     machine:
       image: ubuntu-2204:current
-    jobs:
+    steps:
       - flox/install                    # <- Install Flox
       - flox/activate:                  # <- Run a command in a Flox environment
           environment: flox/nb
