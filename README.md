@@ -46,13 +46,14 @@ An example
 version: '2.1'
 
 orbs:
-  flox: flox/flox-orb@1.0.0
+  flox: flox/orb@1.0.0
 
 jobs:
   use-flox-orb:
     machine:
       image: ubuntu-2204:current
     steps:
+      - checkout
       - flox/install                    # <- Install Flox
       - flox/activate:                  # <- Run a command in a Flox environment
           environment: flox/nb
