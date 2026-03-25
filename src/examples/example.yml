@@ -1,5 +1,5 @@
 description: >
-  Install Flox and command in a Flox environment.
+  Install Flox and run a command in a Flox environment.
 
 usage:
   version: 2.1
@@ -10,8 +10,8 @@ usage:
       machine:
         image: ubuntu-2204:current
       steps:
-        - flox/install
+        - flox/install:
+            disable-metrics: "true"
         - flox/activate:
             environment: "flox/nb"
             command: "python --version"
-
