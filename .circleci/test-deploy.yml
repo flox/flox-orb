@@ -45,6 +45,18 @@ jobs:
       - flox/activate:
           dir: "."
           command: "circleci version"
+  install-with-options-test:
+    machine:
+      image: ubuntu-2204:current
+    steps:
+      - checkout
+      - flox/install:
+          disable-metrics: "true"
+          disable-upgrade-notifications: "true"
+          trusted-environments: "flox/nb"
+      - flox/activate:
+          dir: "."
+          command: "circleci version"
 
 workflows:
   test-deploy:
@@ -54,6 +66,8 @@ workflows:
       - remote-environment-test:
           filters: *filters
       - local-environment-test:
+          filters: *filters
+      - install-with-options-test:
           filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
@@ -67,5 +81,6 @@ workflows:
             - orb-tools/pack
             - remote-environment-test
             - local-environment-test
+            - install-with-options-test
           #TODO: context: <publishing-context>
           filters: *release-filters
