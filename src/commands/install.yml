@@ -11,8 +11,59 @@ parameters:
     type: string
     default: stable
     description: >
-      Release environment (or release channel) from which to install Flox from.
-      One of the following: stable, qa, nightly or specify a commit.
+      Release environment (or release channel) from which
+      to install Flox from. One of the following: stable,
+      qa, nightly or specify a commit.
+  disable-metrics:
+    type: string
+    default: "false"
+    description: >
+      Disable sending anonymous usage statistics to flox.
+  retries:
+    type: string
+    default: "3"
+    description: >
+      Number of retries for downloading and installing
+      Flox.
+  trusted-environments:
+    type: string
+    default: ""
+    description: >
+      Comma-separated list of FloxHub environments to
+      trust automatically (e.g. owner/env1,owner/env2).
+  extra-nix-config:
+    type: string
+    default: ""
+    description: >
+      Additional lines to append to /etc/nix/nix.conf.
+  extra-substituters:
+    type: string
+    default: ""
+    description: >
+      Space-separated Nix binary cache URLs to add as
+      trusted substituters.
+  extra-substituter-keys:
+    type: string
+    default: ""
+    description: >
+      Space-separated public keys for the extra
+      substituters.
+  proxy:
+    type: string
+    default: ""
+    description: >
+      HTTP/HTTPS/SOCKS5 proxy URL for network requests.
+  disable-upgrade-notifications:
+    type: string
+    default: "true"
+    description: >
+      Suppress flox upgrade notifications in CI output.
+  extra-flox-config:
+    type: string
+    default: ""
+    description: >
+      Additional flox config key=value pairs, one per
+      line. Applied via flox config --set for each pair.
 
 steps:
   - run:
@@ -21,3 +72,12 @@ steps:
       environment:
         PARAM_VERSION: <<parameters.version>>
         PARAM_CHANNEL: <<parameters.channel>>
+        PARAM_DISABLE_METRICS: <<parameters.disable-metrics>>
+        PARAM_RETRIES: <<parameters.retries>>
+        PARAM_TRUSTED_ENVS: <<parameters.trusted-environments>>
+        PARAM_EXTRA_NIX_CONFIG: <<parameters.extra-nix-config>>
+        PARAM_EXTRA_SUBSTITUTERS: <<parameters.extra-substituters>>
+        PARAM_EXTRA_SUBSTITUTER_KEYS: <<parameters.extra-substituter-keys>>
+        PARAM_PROXY: <<parameters.proxy>>
+        PARAM_DISABLE_UPGRADE: <<parameters.disable-upgrade-notifications>>
+        PARAM_EXTRA_FLOX_CONFIG: <<parameters.extra-flox-config>>
