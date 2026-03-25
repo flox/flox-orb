@@ -2,6 +2,7 @@
 
 COMMAND="${PARAM_COMMAND}"
 ENVIRONMENT="${PARAM_ENV}"
+DIR="${PARAM_DIR}"
 
 if [ "$COMMAND" == "" ]; then
   echo "command parameter is required."
@@ -11,6 +12,9 @@ fi
 ACTIVATE="flox activate"
 if [ "$ENVIRONMENT" != "" ]; then
   ACTIVATE="$ACTIVATE --remote=$ENVIRONMENT"
+fi
+if [ "$DIR" != "" ]; then
+  ACTIVATE="$ACTIVATE --dir=$DIR"
 fi
 
 ACTIVATE="$ACTIVATE -- $COMMAND"

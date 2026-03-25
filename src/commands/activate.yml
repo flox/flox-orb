@@ -11,8 +11,13 @@ parameters:
     type: string
     default: ""
     description: >
-      Environment to run the command in. If not specified it will try to find
-      local Flox environment.
+      Remote environment to run the command in. If not specified it will try to
+      find local Flox environment.
+  dir:
+    type: string
+    default: ""
+    description: >
+      Path containing a .flox/ directory.
 
 steps:
   - run:
@@ -21,3 +26,4 @@ steps:
       environment:
         PARAM_COMMAND: <<parameters.command>>
         PARAM_ENV: <<parameters.environment>>
+        PARAM_DIR: <<parameters.dir>>
