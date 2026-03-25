@@ -11,7 +11,7 @@ fi
 
 ACTIVATE="flox activate"
 if [ "$ENVIRONMENT" != "" ]; then
-  ACTIVATE="$ACTIVATE --remote=$ENVIRONMENT"
+  ACTIVATE="$ACTIVATE --reference=$ENVIRONMENT"
 fi
 if [ "$DIR" != "" ]; then
   ACTIVATE="$ACTIVATE --dir=$DIR"
