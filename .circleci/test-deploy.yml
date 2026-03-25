@@ -34,6 +34,17 @@ jobs:
       - flox/activate:
           environment: "flox/nb"
           command: "python --version"
+  local-environment-test:
+    machine:
+      image: ubuntu-2204:current
+    environment:
+      FLOX_DISABLE_METRICS: true
+    steps:
+      - checkout
+      - flox/install
+      - flox/activate:
+          dir: "."
+          command: "circleci version"
 
 workflows:
   test-deploy:
@@ -41,6 +52,8 @@ workflows:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
       # Test your orb's commands in a custom job and test your orb's jobs directly as a part of this workflow.
       - remote-environment-test:
+          filters: *filters
+      - local-environment-test:
           filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
@@ -52,6 +65,7 @@ workflows:
           # Ensure this job requires all test jobs and the pack job.
           requires:
             - orb-tools/pack
-            - remote-environment-test 
+            - remote-environment-test
+            - local-environment-test
           #TODO: context: <publishing-context>
           filters: *release-filters
