@@ -1,23 +1,24 @@
 #!/bin/bash
+set -euo pipefail
 
 COMMAND="${PARAM_COMMAND}"
 ENVIRONMENT="${PARAM_ENV}"
 DIR="${PARAM_DIR}"
 
-if [ "$COMMAND" == "" ]; then
+if [ -z "$COMMAND" ]; then
   echo "command parameter is required."
   exit 2
 fi
 
 ACTIVATE="flox activate"
-if [ "$ENVIRONMENT" != "" ]; then
-  ACTIVATE="$ACTIVATE --reference=$ENVIRONMENT"
+if [ -n "$ENVIRONMENT" ]; then
+  ACTIVATE="$ACTIVATE -r=$ENVIRONMENT"
 fi
-if [ "$DIR" != "" ]; then
+if [ -n "$DIR" ]; then
   ACTIVATE="$ACTIVATE --dir=$DIR"
 fi
 
-ACTIVATE="$ACTIVATE -- $COMMAND"
+ACTIVATE="$ACTIVATE -c \"$COMMAND\""
 
 echo "Running: $ACTIVATE"
 
