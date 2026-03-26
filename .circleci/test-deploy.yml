@@ -51,9 +51,9 @@ jobs:
     steps:
       - checkout
       - flox/install:
-          disable-metrics: "true"
-          disable-upgrade-notifications: "true"
-          trusted-environments: "flox/nb"
+          disable_metrics: "true"
+          disable_upgrade_notifications: "true"
+          trusted_environments: "flox/nb"
       - flox/activate:
           dir: "."
           command: "circleci version"
