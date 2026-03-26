@@ -60,6 +60,62 @@ jobs:
           command: python --version
 ```
 
+## 📖 Commands
+
+### `flox/install`
+
+Installs Flox on the runner. If Nix is already present, installs
+via `nix profile install`; otherwise downloads the platform package.
+
+| Parameter | Default | Description |
+| --------- | ------- | ----------- |
+| `version` | `""` | Specific version to install |
+| `channel` | `stable` | `stable`, `qa`, `nightly`, or a commit hash |
+| `disable_metrics` | `"false"` | Disable anonymous usage statistics |
+| `retries` | `"3"` | Retry count for download and install |
+| `trusted_environments` | `""` | Comma-separated FloxHub envs to trust |
+| `extra_nix_config` | `""` | Lines to append to `/etc/nix/nix.conf` |
+| `extra_substituters` | `""` | Space-separated Nix binary cache URLs |
+| `extra_substituter_keys` | `""` | Public keys for extra substituters |
+| `proxy` | `""` | HTTP/HTTPS/SOCKS5 proxy URL |
+| `disable_upgrade_notifications` | `"true"` | Suppress upgrade notifications |
+| `extra_flox_config` | `""` | Key=value pairs for `flox config --set` |
+
+### `flox/activate`
+
+Runs a command inside a Flox environment.
+
+| Parameter | Default | Description |
+| --------- | ------- | ----------- |
+| `command` | `""` | Command to run (required) |
+| `environment` | `""` | Remote environment (e.g. `flox/nb`) |
+| `dir` | `""` | Path containing a `.flox/` directory |
+
+### Examples
+
+```yml
+# Minimal: install and activate a remote environment
+- flox/install
+- flox/activate:
+    environment: flox/nb
+    command: python --version
+
+# With options
+- flox/install:
+    disable_metrics: "true"
+    trusted_environments: "myorg/myenv"
+- flox/activate:
+    dir: "."
+    command: my-tool --version
+
+# Using a proxy
+- flox/install:
+    proxy: "http://proxy.example.com:8080"
+- flox/activate:
+    environment: flox/nb
+    command: python --version
+```
+
 ## 📫 Have a question? Want to chat? Ran into a problem?
 
 We are happy to welcome you to our [Discourse forum][discourse] and answer your
